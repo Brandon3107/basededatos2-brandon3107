@@ -1,0 +1,15 @@
+ BEGIN
+DBMS_OUTPUT.PUT_LINE('mi primer programa de PL/SQL');
+END;
+/
+
+Programa 2
+DECLARE
+NOMBRE VARCHAR2(80);
+EDAD INTEGER;
+BEGIN
+NOMBRE:='Brandon y Juan';
+EDAD:=20;
+DBMS_OUTPUT.PUT_LINE('HOLA ' ||NOMBRE|| ' TU EDAD ES ' || EDAD);
+END;
+/
