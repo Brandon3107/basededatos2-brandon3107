@@ -1,0 +1,8 @@
+/* Primero creamos la tabla pelicula */
+
+create table pelicula (id_pelicula integer, titulo varchar2(120), sinopsis varchar2(320), constraint pk_id_pelicula primary key (id_pelicula));
+create table sala (id_sala integer, id_pelicula integer, sala integer, constraint pk_id_sala primary key (id_sala), constraint fk1_id_pelicula foreign key (id_pelicula) references pelicula(id_pelicula));
+
+insert into pelicula(id_pelicula,titulo,sinopsis) values(1,'avatar','es una pelicula que me hizo reir');
+insert into sala(id_sala,id_pelicula,sala) values(1,1,1);
+insert into sala(id_sala,id_pelicula,sala) values(1,5,1);
