@@ -1,0 +1,28 @@
+create table empleado( id integer, nombre varchar2(120), sueldo float);
+
+insert into empleado values(1, 'lupita', 7);
+insert into empleado values(2, 'doña chona', 76);
+insert into empleado values(3, 'juana', 760);
+insert into empleado values(4, 'chana', 7601);
+insert into empleado values(5, 'petra', 7600);
+
+select * from empleado;
+
+set serveroutput on;
+declare
+nuevo_sueldo float;
+begin
+select sueldo into nuevo_sueldo from empleado where id=2;
+DBMS_OUTPUT.PUT_LINE('El sueldo seleccionado es '||nuevo_sueldo);
+update empleado set sueldo=sueldo+10000 where id=2;
+end;
+/
+
+declare 
+cursor cursor_empleado is select * from empleado;
+begin
+for fila in cursor_empleado loop
+DBMS_OUTPUT.PUT_LINE('Mensajito '||fila.nombre);
+end loop;
+end;
+/
